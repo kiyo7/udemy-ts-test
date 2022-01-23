@@ -6,7 +6,7 @@ import { COMMENT } from '../types/Types';
 
 const axiosFetcher = async () => {
   const result = await axios.get<COMMENT[]>(
-    'https://jsonpalceholder.typicode.com/comments/?_limit=10'
+    'https://jsonplaceholder.typicode.com/comments/?_limit=10'
   );
   return result.data;
 };

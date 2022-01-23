@@ -8,7 +8,7 @@ import 'setimmediate';
 
 const server = setupServer(
   rest.get(
-    'https://jsonplaceholder.typicode.com/comments/?limit=10',
+    'https://jsonplaceholder.typicode.com/comments/?_limit=10',
     (req, res, ctx) => {
       return res(
         ctx.status(200),
@@ -55,7 +55,7 @@ describe('Comment page with useSWR / Success+Error', () => {
   it('Should render Error text when fetch failed', async () => {
     server.use(
       rest.get(
-        'https://jsonplaceholder.typicode.com/comments/?limit=10',
+        'https://jsonplaceholder.typicode.com/comments/?_limit=10',
         (req, res, ctx) => {
           return res(ctx.status(400));
         }
